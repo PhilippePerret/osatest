@@ -30,6 +30,13 @@ class OSATest
     ])
   end
 
+  def abort
+    app == 'Terminal' || raise("L’instruction 'abort' s'emploie seulement avec l’application Terminal.")
+    press([
+      {key:'c', modifiers:[:control]}
+    ])
+  end
+
   # @return console state (all text inside) or document
   # text
   def content
