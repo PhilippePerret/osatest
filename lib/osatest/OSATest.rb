@@ -1,5 +1,3 @@
-require 'osascript'
-
 module Minitest
 class Test
 class OSATest

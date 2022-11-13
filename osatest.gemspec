@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'minitest'
   s.add_development_dependency 'minitest-color'
+  s.add_development_dependency 'minitest/assertions'
 
   s.metadata["allowed_push_host"] = "https://github.com/PhilippePerret/osatest"
 

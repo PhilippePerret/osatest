@@ -1,5 +1,3 @@
-require 'minitest/assertions'
-
 module Minitest::Assertions
 
   # @param tosa {Minitest::Test::OSATest}
