@@ -22,6 +22,14 @@ class OSATest
     Osascript::Key.press([key, :RETURN], app, options)
   end
 
+  def finish
+    app == 'Terminal' || raise("L’instruction 'finish' s'emploie seulement avec l’application Terminal.")
+    press([
+      'exit', :RETURN, 
+      {key:'w', modifiers:[:command]}
+    ])
+  end
+
   # @return console state (all text inside) or document
   # text
   def content
