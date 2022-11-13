@@ -20,6 +20,7 @@ class OSATest
 
   def run(key)
     Osascript::Key.press([key, :RETURN], app, options)
+    return self
   end
 
   def finish
@@ -28,6 +29,7 @@ class OSATest
       'exit', :RETURN, 
       {key:'w', modifiers:[:command]}
     ])
+    return self
   end
 
   def abort
@@ -35,6 +37,7 @@ class OSATest
     press([
       {key:'c', modifiers:[:control]}
     ])
+    return self
   end
 
   # @return console state (all text inside) or document
@@ -53,11 +56,13 @@ class OSATest
   # Ouvrir une nouvelle fenêtre dans l'application
   def new_window
     press({key:"n", modifiers:[:command]})
+    return self
   end
 
   # @return clear console before continuing
   def clear
     press(["clear", :RETURN])
+    return self
   end
 
 end #/class OSATest
