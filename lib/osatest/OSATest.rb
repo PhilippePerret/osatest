@@ -17,6 +17,7 @@ class OSATest
   def delay(value)
     options.merge!(delay: value)
   end
+  alias :delay= :delay
 
   def press(keys)
     Osascript::Key.press(keys, app, options)      
