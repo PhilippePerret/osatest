@@ -13,6 +13,11 @@ class OSATest
     self.assertions = 0
   end
 
+  # To modify delay
+  def delay(value)
+    options.merge!(delay: value)
+  end
+
   def press(keys)
     Osascript::Key.press(keys, app, options)      
   end
