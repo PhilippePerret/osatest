@@ -19,7 +19,7 @@ class Test
   end
 
   def action(str)
-    puts "🪚 #{str}".mauve
+    puts "🪚 #{str}".bleu_clair
   end
 
   def mini_success(str)

@@ -1,3 +1,5 @@
+* 0.1.7
+  - Minor change: changement de couleur
 * 0.1.6
   - Possibilité de modifier le delay on-the-fly
 * 0.1.5
