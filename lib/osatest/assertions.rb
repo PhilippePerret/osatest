@@ -23,8 +23,15 @@ class OSATest
     strs = [strs] if not(strs.is_a?(Array))
     failure_message = failure_message ? "#{failure_message}\n" : ''
     strs.each do |str|
-      assert_includes content, str,
-        "#{failure_message}Expected to find '#{str}' in #{x} last lines of #{content}"
+      if str.is_a?(String)
+        assert_includes content, str,
+          "#{failure_message}Expected to find '#{str}' in #{x} last lines of #{content}"
+      elsif str.is_a?(Regexp)
+        assert_match content, str,
+            "#{failure_message}Expected to find #{str.inspect} in #{x} last lines of #{content}"
+      else
+        raise "Je ne sais pas comment chercher #{str.inspect} (on ne peut fournir à #has_in_last_lines que des {String}s ou des expressions régulières.".rouge
+      end
     end
   end
 end #/class OSATest

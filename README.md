@@ -59,6 +59,10 @@ class MyTest < Minitest::Test
 end
 ~~~
 
+### Item in a select menu
+
+Note you can't ask *Osatest* to find out a item in a select menu by giving it the content of the menu (during the development, the index of the item can change). You have to deal with that in the test itself, loading the choices of the select and finding the index of the menu itself.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
