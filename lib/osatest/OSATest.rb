@@ -20,9 +20,14 @@ class OSATest
   alias :delay= :delay
 
   def press(keys)
-    Osascript::Key.press(keys, app, options)      
+    Osascript::Key.press(keys, app, options)
   end
   alias :<< :press
+
+  def fast(keys)
+    Osascript::Key.press(keys, app, options.merge!(delay:3))
+  end
+  alias '<<<'.to_sym :fast
 
   def run(key)
     Osascript::Key.press([key, :RETURN], app, options)

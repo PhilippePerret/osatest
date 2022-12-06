@@ -1,3 +1,5 @@
+* 0.2.0
+  - Add method #fast (<<<) to play keys faster
 * 0.1.7
   - Minor change: changement de couleur
 * 0.1.6
