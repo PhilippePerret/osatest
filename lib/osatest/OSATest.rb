@@ -27,7 +27,6 @@ class OSATest
   def fast(keys)
     Osascript::Key.press(keys, app, options.merge!(delay:3))
   end
-  alias '<<<'.to_sym :fast
 
   def run(key)
     Osascript::Key.press([key, :RETURN], app, options)

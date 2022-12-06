@@ -1,3 +1,5 @@
+* 0.2.1
+  - FIXED: can't use <<< method for fast method.
 * 0.2.0
   - Add method #fast (<<<) to play keys faster
 * 0.1.7
