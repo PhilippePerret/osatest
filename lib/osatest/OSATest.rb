@@ -25,7 +25,7 @@ class OSATest
   alias :<< :press
 
   def fast(keys)
-    Osascript::Key.press(keys, app, options.merge!(delay:3))
+    Osascript::Key.press(keys, app, options.merge(delay:3))
   end
 
   def run(key)

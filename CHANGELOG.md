@@ -1,3 +1,5 @@
+* 0.2.2
+  - FIXED: fast method must not change options.
 * 0.2.1
   - FIXED: can't use <<< method for fast method.
 * 0.2.0
