@@ -1,3 +1,5 @@
+* 3.0.0
+  - Add method #slow (to play keys slower)
 * 0.2.2
   - FIXED: fast method must not change options.
 * 0.2.1
