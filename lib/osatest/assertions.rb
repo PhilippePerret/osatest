@@ -10,7 +10,7 @@ module Minitest::Assertions
 
   end
 
-end #/module Minitest::Assertions
+end #/module Minitest
 
 module Minitest
 class Test
@@ -18,6 +18,17 @@ class OSATest
   include Minitest::Assertions
   attr_accessor :assertions
 
+  # Check if console contains lines of text
+  # 
+  # @param strs [String|Regexp|Array of theses] Text or Regex to find
+  # @param x [Integer] Number lines to fetch (default: 10)
+  # @param failure_message [String] Optional error message
+  # 
+  # @example
+  #     tosa = OSATest.new(app:"Terminal", delay: 0.1)
+  #     # some actions
+  #     tosa.has_in_last_lines(["this texte", /some reg text/])
+  # 
   def has_in_last_lines(strs, x = 10, failure_message = nil)
     content = self.content.split("\n").reverse[0..x].reverse.join("\n")
     strs = [strs] if not(strs.is_a?(Array))
