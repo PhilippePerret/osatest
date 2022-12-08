@@ -1,3 +1,5 @@
+* 0.4.0
+  - Documentation with Yard
 * 3.0.0
   - Add method #slow (to play keys slower)
 * 0.2.2
