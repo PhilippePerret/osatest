@@ -5,10 +5,15 @@ class OSATest
   attr_reader :app
   attr_reader :options
 
+  # Initialize a new OSATester.
+  # @param [Hash] Optional parameters (see below)
+  # @option params [Float] :delay   Delay between actions
+  # @option params [Rectangle] :window_bounds Bounds for the windows
   def initialize(params)
     @app      = params[:app] || "Terminal"
     @options  = {
-      delay: params[:delay] || 0.5 
+      delay:          params[:delay] || 0.5,
+      window_bounds:  params[:window_bounds] || nil
     }
     @initial_delay = @options[:delay]
     self.assertions = 0
@@ -92,8 +97,22 @@ class OSATest
   end
 
   # Open a new window in defined app
-  def new_window
+  # @param [Rectangle|False] bounds  Rectangle to define the window 
+  #             bounds [left, top, rigth, bottom]
+  #             If false, no bounds affected even if defined.
+  # @note
+  #   If +bounds+ is defined and not options[:window_bounds], then
+  #   options[:window_bounds] is set to +bounds+ so the next windows
+  #   retrieves the same bounds. Unless bounds is explicitely false
+  def new_window(bounds = nil)
     press({key:"n", modifiers:[:command]})
+    # 
+    # Set maybe the window size and position
+    # 
+    if (bounds || options[:window_bounds]) && not(bounds === false)
+      options.merge!(window_bounds: bounds) unless options[:window_bounds]
+      Osascript.set_window_bounds(app, bounds || options[:window_bounds])
+    end
     return self
   end
 
