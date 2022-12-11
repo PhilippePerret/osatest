@@ -1,3 +1,5 @@
+* 0.4.1
+  - Position and size of test window
 * 0.4.0
   - Documentation with Yard
 * 3.0.0
