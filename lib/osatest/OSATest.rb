@@ -41,8 +41,12 @@ class OSATest
   # Simulate fast several keypress
   # @param keys [Array<String, Integer>] Key list
   # @param @optional delay [Float] Delay between action (default: 0.1)
+  # @note
+  #   On revient à la vitesse normal sur le dernier.
   def fast(keys, delay = 0.1)
+    last_key = keys.pop
     Osascript::Key.press(keys, app, options.merge(delay:delay))
+    Osascript::Key.press(last_key, app, options)
   end
 
   def slow(keys, delay = 2)
