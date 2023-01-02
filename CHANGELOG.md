@@ -1,3 +1,5 @@
+* 0.4.2
+  - Add assertion #has_not_in_last_lines
 * 0.4.1
   - Position and size of test window
 * 0.4.0

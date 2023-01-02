@@ -45,6 +45,23 @@ class OSATest
       end
     end
   end
+
+  def has_not_in_last_lines(strs, x = 10, failure_message = nil)
+    content = self.content.split("\n").reverse[0..x].reverse.join("\n")
+    strs = [strs] if not(strs.is_a?(Array))
+    failure_message = failure_message ? "#{failure_message}\n" : ''
+    strs.each do |str|
+      if str.is_a?(String)
+        refute_includes content, str,
+          "#{failure_message}Expected not to find '#{str}' in #{x} last lines of #{content}"
+      elsif str.is_a?(Regexp)
+        refute_match(str, content,
+            "#{failure_message}Expected not to find #{str.inspect} in #{x} last lines of #{content}")
+      else
+        raise "Je ne sais pas comment chercher #{str.inspect} (on ne peut fournir à #has_in_last_lines que des {String}s ou des expressions régulières.".rouge
+      end
+    end
+  end
 end #/class OSATest
 end #/class Test
 end #/module Minitest::Test
