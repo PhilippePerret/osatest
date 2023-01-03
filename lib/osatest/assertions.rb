@@ -16,7 +16,8 @@ module Minitest
 class Test
 class OSATest
   include Minitest::Assertions
-  attr_accessor :assertions
+  attr_accessor :assertions # ne pas oublier self.assertions = 0 dans initialize
+
 
   # Check if console contains lines of text
   # 
