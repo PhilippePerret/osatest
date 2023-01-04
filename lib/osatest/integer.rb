@@ -10,4 +10,13 @@ class Integer
   end
   alias :up :UP
 
+  def RIGHT
+    Array.new(self, :RIGHT)
+  end
+  alias :right :RIGHT
+
+  def LEFT
+    Array.new(self, :LEFT)
+  end
+  alias :left :LEFT
 end

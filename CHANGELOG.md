@@ -1,3 +1,5 @@
+* 0.5.2
+  - add Integer#left et Integer#right methods
 * 0.5.1
   - add Integer#up/#UP methods
 * 0.5.0
