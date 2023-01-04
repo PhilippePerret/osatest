@@ -1,5 +1,7 @@
+* 0.5.1
+  - add Integer#up/#UP methods
 * 0.5.0
-  - add Integer#down method
+  - add Integer#down/DOWN method
 * 0.4.2
   - Add assertion #has_not_in_last_lines
 * 0.4.1

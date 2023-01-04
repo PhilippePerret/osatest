@@ -10,4 +10,13 @@ class IntegerExtensionTest < Minitest::Test
     assert_equal [], 0.down
   end
 
+  def test_up_method
+
+    assert_respond_to 3, :UP
+    assert_respond_to 3, :up
+    assert_equal [:UP, :UP, :UP], 3.UP
+    assert_equal [:UP, :UP, :UP, :UP], 4.up
+    assert_equal [], 0.up
+  end
+
 end #/minitest

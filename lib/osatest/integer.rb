@@ -5,4 +5,9 @@ class Integer
   end
   alias :down :DOWN
 
+  def UP
+    Array.new(self, :UP)
+  end
+  alias :up :UP
+
 end
