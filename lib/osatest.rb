@@ -1,3 +1,4 @@
+require 'osascript'
 require "osatest/version"
 require "osatest/OSATest"
 require "osatest/assertions"

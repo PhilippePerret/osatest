@@ -1,3 +1,5 @@
+* 0.5.3
+  - add osacript gem dependency
 * 0.5.2
   - add Integer#left et Integer#right methods
 * 0.5.1
