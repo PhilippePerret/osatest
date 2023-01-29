@@ -1,3 +1,5 @@
+* 0.5.4
+  - add plurial aliases (:ups, :downs, etc.)
 * 0.5.3
   - add osacript gem dependency
 * 0.5.2
